@@ -74,7 +74,7 @@ jobs:
         run: |
           if [ "${{ inputs.latest }}" != "false" ]; then
             LATEST_VERSION=$(wget -nv -O - https://upgrade.mikrotik.com/routeros/NEWEST6.${{ matrix.channel }} | cut -d ' ' -f1)
-            _LATEST_VERSION=$(wget -nv -O - https://${{ env.CUSTOM_UPGRADE_URL }}/routeros/NEWEST6.${{ matrix.channel }}  | cut -d ' ' -f1) || true
+    
           else
             LATEST_VERSION=${{ inputs.custom }}
           fi
